@@ -88,6 +88,10 @@ skills_profile:
     - {skill: algorithms_ds, proficiency: aware, note: "applies standard structures and algorithms appropriately"}
     - {skill: problem_framing, proficiency: aware, note: "clarifies requirements; escalates ambiguity"}
     - {skill: technical_communication, proficiency: aware, note: "documents clearly; participates in reviews"}
+    - {skill: mathematics, proficiency: aware, note: "applies the math the component needs: complexity, basic statistics"}
+    - {skill: security_practices, proficiency: aware, note: "validates inputs and handles secrets by the book"}
+    - {skill: data_quality, proficiency: aware, note: "checks the data its component consumes and produces"}
+    - {skill: model_evaluation, proficiency: aware, note: "measures output against held-out data before claiming it works"}
   pillar_emphasis: [implement]
 
 # --- Performance Rubric: senior evaluates engineer's output ---

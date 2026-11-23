@@ -91,6 +91,8 @@ skills_profile:
     - {skill: cross_team_influence, proficiency: authority, note: "aligns across orgs; trusted advisor to executives"}
     - {skill: mentoring_hiring, proficiency: authority, note: "develops next-gen leaders; builds culture; attracts exceptional talent"}
     - {skill: technical_communication, proficiency: authority, note: "thought leadership; represents organization externally"}
+    - {skill: research_methods, proficiency: inventor, note: "sets the research agenda and designs the experiments others run"}
+    - {skill: stakeholder_management, proficiency: deep, note: "aligns leadership and partner organizations on direction"}
   pillar_emphasis: [invent, influence]
 
 # --- Performance Rubric: evaluated by executive leadership ---

@@ -277,9 +277,13 @@ tier below, `reports_to` is the tier directly above). It warns when the ladder r
 (scope, autonomy or a skill's proficiency dropping one tier up) and when a definition kept in
 two places has drifted. CI runs it with `--strict`.
 
-On the shipped KB it passes clean, and it lists the taxonomy skills no tier claims (currently
-18 of 29, mostly the ML, data and ops skills). That is informational, not a failure: it shows
-how much of the taxonomy the agent prompts actually ask for.
+It also lists any taxonomy skills that no tier claims. That is informational, not a failure: it
+shows how much of the taxonomy the agent prompts actually ask for. Its first run found 18 of 29
+unclaimed, including every ML skill, although the built-in sample task (extraction accuracy on
+bilingual PDFs) is an ML problem. Each was then given to the tier whose scope it fits, with
+depth rising up the ladder (for example `model_evaluation` is *aware* at engineer and
+*proficient* at senior; `nlp_llm` and `serving_inference` are *deep* at staff). The shipped KB
+now passes `--check-kb --strict` with every skill claimed.
 
 ---
 

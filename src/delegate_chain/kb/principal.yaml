@@ -92,6 +92,10 @@ skills_profile:
     - {skill: system_design, proficiency: deep, note: "architectural patterns adopted org-wide"}
     - {skill: cross_team_influence, proficiency: deep, note: "aligns multiple teams; resolves complex conflicts"}
     - {skill: mentoring_hiring, proficiency: deep, note: "mentors staff+; leadership assessments; talent attraction"}
+    - {skill: computer_vision, proficiency: deep, note: "judges vision approaches (OCR, detection) across programs"}
+    - {skill: deep_learning, proficiency: deep, note: "decides when deep models are worth their data and compute"}
+    - {skill: distributed_processing, proficiency: deep, note: "sets partitioning and storage strategy for program-scale data"}
+    - {skill: systems_theory, proficiency: deep, note: "reasons about consistency and fault tolerance across systems"}
   pillar_emphasis: [invent, influence]
 
 # --- Performance Rubric: distinguished evaluates principal's output ---

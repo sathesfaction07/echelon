@@ -89,6 +89,11 @@ skills_profile:
     - {skill: coding_craft, proficiency: proficient, note: "writes exemplary code; demonstrates engineering growth"}
     - {skill: technical_communication, proficiency: proficient, note: "leads design discussions; mentors engineers"}
     - {skill: testing_quality, proficiency: proficient, note: "comprehensive test strategy"}
+    - {skill: classical_ml, proficiency: proficient, note: "chooses and tunes standard models for project-level problems"}
+    - {skill: model_evaluation, proficiency: proficient, note: "picks metrics that match the decision; does error analysis"}
+    - {skill: data_pipelines, proficiency: proficient, note: "builds the batch or streaming pipelines a project depends on"}
+    - {skill: performance_optimization, proficiency: proficient, note: "profiles first, then fixes the measured bottleneck"}
+    - {skill: devops_practices, proficiency: proficient, note: "ships the project through CI/CD as a deployable artifact"}
   pillar_emphasis: [implement, invent]
 
 # --- Performance Rubric: staff evaluates senior's output ---

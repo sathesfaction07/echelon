@@ -93,6 +93,10 @@ skills_profile:
     - {skill: cross_team_influence, proficiency: proficient, note: "coordinates across teams; unblocks dependencies"}
     - {skill: mentoring_hiring, proficiency: proficient, note: "mentors engineers/seniors; provides promotion assessments"}
     - {skill: coding_craft, proficiency: deep, note: "exemplary code setting team standards"}
+    - {skill: nlp_llm, proficiency: deep, note: "decides where embeddings, LLMs or fine-tuning earn their cost in a product"}
+    - {skill: ml_lifecycle, proficiency: deep, note: "makes experiments reproducible and models versioned across a product"}
+    - {skill: serving_inference, proficiency: deep, note: "owns latency and cost trade-offs of models in production"}
+    - {skill: monitoring_ops, proficiency: deep, note: "drift detection, alerting and incident response for the product"}
   pillar_emphasis: [invent, implement, influence]
 
 # --- Performance Rubric: principal evaluates staff's output ---
