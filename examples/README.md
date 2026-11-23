@@ -1,6 +1,6 @@
 # Generator Output Examples
 
-These are **real artifacts produced by the delegate-chain multi-agent system** — not hand-crafted demos.
+These are **real artifacts produced by the echelon multi-agent system** — not hand-crafted demos.
 Each folder is the verbatim output of a single generator run, genericized for this portfolio.
 
 *Note: This project's working name during development was "genna"; references to that codename
@@ -42,8 +42,8 @@ Two kinds of post-generation edits were made, and they are listed here rather th
 A sixth example, `kb_report/`, was **retired**. It reported on `L4.yaml` … `L8.yaml`, a layout
 that no longer exists, and every assertion it made was about those names. It could not be fixed
 without rewriting it, and a rewritten file would no longer be generator output. What it did
-(summarise the tier files) is now `delegate-chain --list-kb`, and the product goes further with
-`delegate-chain --check-kb`, a hand-written, tested audit of the KB.
+(summarise the tier files) is now `echelon --list-kb`, and the product goes further with
+`echelon --check-kb`, a hand-written, tested audit of the KB.
 
 ---
 

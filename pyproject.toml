@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "delegate-chain"
+name = "echelon"
 version = "1.0.0"
 description = "Hierarchical multi-agent delegation system where each engineering level delegates tasks down and reviews work up"
 readme = "README.md"
@@ -23,7 +23,7 @@ dev = [
 ]
 
 [project.scripts]
-delegate-chain = "delegate_chain.run:main"
+echelon = "delegate_chain.run:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/delegate_chain"]

@@ -1,12 +1,12 @@
 # Architecture
 
-Technical deep-dive into DelegateChain's hierarchical multi-agent delegation system.
+Technical deep-dive into Echelon's hierarchical multi-agent delegation system.
 
 ---
 
 ## Overview
 
-DelegateChain implements a capability-tiered delegation system where work flows downward through five levels of increasing tactical focus, and critique flows upward through rubric-based review. The system answers two questions:
+Echelon implements a capability-tiered delegation system where work flows downward through five levels of increasing tactical focus, and critique flows upward through rubric-based review. The system answers two questions:
 
 1. **How do you decompose a complex task across agents with different reasoning altitudes?**
 2. **How do you ensure quality across that decomposition without rubber-stamping?**
@@ -526,13 +526,13 @@ Higher tiers use slightly higher temperature (0.2 → 0.4) to reflect that strat
 
 ```bash
 # Default: router classifies, full delegation chain
-delegate-chain --task "Design a bilingual PDF classifier"
+echelon --task "Design a bilingual PDF classifier"
 
 # Force entry tier
-delegate-chain --task "Implement is_prime(n)" --entry-level engineer
+echelon --task "Implement is_prime(n)" --entry-level engineer
 
 # Increase retry limit and cap fanout
-delegate-chain --task "Define compliance strategy" --max-iters 3 --max-fanout 4
+echelon --task "Define compliance strategy" --max-iters 3 --max-fanout 4
 ```
 
 ### Code Generation Mode
@@ -549,13 +549,13 @@ python -m delegate_chain.build.run --task "Add type hints" --edit ./myrepo --app
 
 ```bash
 # View system prompts for all tiers
-delegate-chain --print-prompts
+echelon --print-prompts
 
 # View one tier
-delegate-chain --print-prompts --level senior
+echelon --print-prompts --level senior
 
 # View tier ladder summary
-delegate-chain --list-kb
+echelon --list-kb
 ```
 
 ---

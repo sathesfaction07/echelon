@@ -1,4 +1,4 @@
-"""The delegate-chain engine: deliver down, review up, integrate.
+"""The echelon engine: deliver down, review up, integrate.
 
 _execute(task, level):
   agent delivers -> SOLVE  : return the artifact it produced.

@@ -1,4 +1,4 @@
-# delegate-chain — Design
+# echelon — Design
 
 A standalone multi-agent system where each engineering tier (engineer→distinguished)
 is an AI agent. Agents **deliver** work down a delegation chain and **review** it
@@ -95,7 +95,7 @@ definitions in context.
 ## 6. Package layout
 
 ```
-delegate-chain/
+echelon/
   docs/
     DESIGN.md              # this file
     ARCHITECTURE.md        # technical architecture

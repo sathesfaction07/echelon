@@ -1,4 +1,4 @@
-# DelegateChain
+# Echelon
 
 A hierarchical multi-agent system where work flows DOWN through capability tiers and critique flows UP, with each tier differentiated by scope (component → project → product → program → portfolio), ambiguity tolerance, autonomy, and time horizon. A router classifies the incoming task, delegates to the appropriate entry level, and each agent either delivers directly or decomposes the work and hands pieces to lower tiers. Parents review children's output against capability-appropriate rubrics before accepting and integrating. The system can execute both planning tasks (producing design documents) and code generation (producing tested implementations in an isolated workspace).
 
@@ -145,7 +145,7 @@ If evidence is missing or weak, the criterion fails. Confident prose without sub
 ## Project Structure
 
 ```
-delegate-chain/
+echelon/
 ├── src/delegate_chain/
 │   ├── orchestrator.py         Router + Orchestrator: entry point, delegation loop
 │   ├── rubric.py               build_review_prompt, parse ReviewVerdict
@@ -218,13 +218,13 @@ export AWS_DEFAULT_REGION=us-east-1
 
 ```bash
 # Run a task through the full delegation chain
-delegate-chain --task "Design a bilingual PDF classification pipeline"
+echelon --task "Design a bilingual PDF classification pipeline"
 
 # Force an entry tier (skip the router)
-delegate-chain --task "Implement a precision-recall evaluator" --entry-level engineer
+echelon --task "Implement a precision-recall evaluator" --entry-level engineer
 
 # Increase review retry limit and cap sub-task fanout
-delegate-chain --task "Define a compliance monitoring strategy" --max-iters 3 --max-fanout 4
+echelon --task "Define a compliance monitoring strategy" --max-iters 3 --max-fanout 4
 ```
 
 ### Code Generation Mode
@@ -254,17 +254,17 @@ python -m delegate_chain.build.run \
 
 ```bash
 # View the system prompt for each tier
-delegate-chain --print-prompts
+echelon --print-prompts
 
 # View one tier only
-delegate-chain --print-prompts --level senior
+echelon --print-prompts --level senior
 
 # See the tier ladder and KB summary
-delegate-chain --list-kb
+echelon --list-kb
 
 # Audit the KB before spending anything on Bedrock (exit 1 on errors; --strict also fails on warnings)
-delegate-chain --check-kb
-delegate-chain --check-kb --strict --format json
+echelon --check-kb
+echelon --check-kb --strict --format json
 ```
 
 The runtime reads the KB leniently, so most KB mistakes do not crash a run. They quietly
@@ -318,13 +318,13 @@ AWS credentials via boto3's profile chain:
 
 ```bash
 export AWS_PROFILE=my-bedrock-profile
-delegate-chain --task "..."
+echelon --task "..."
 ```
 
 Or inline:
 
 ```bash
-delegate-chain --task "..." --profile my-bedrock-profile --region us-east-1
+echelon --task "..." --profile my-bedrock-profile --region us-east-1
 ```
 
 When `--profile` is set, the client drops ambient `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN` from the environment so profile credentials take precedence.
@@ -366,7 +366,7 @@ Higher tiers use slightly higher temperature (0.2 → 0.4) reflecting the expect
 
 **`clamp_below()` is four lines but it's load-bearing.** Early iterations didn't enforce that delegation targets must be strictly below the delegator. An agent would emit `target_level="staff"` from a staff agent — model error or ambiguous charter phrasing — and create a cycle. Clamping handles it silently: if target is at or above the delegator, redirect to the next level down. Combined with logging (`capping fanout`, depth-limit warnings), the tree's shape becomes visible during runs, which is how I caught poorly-worded sub-tasks causing repeated same-level delegation.
 
-**Shrink-fast-grow-slow thinking applies to tree shape, not just numeric sizing.** AdaptiveFetch uses it for batch sizing: cut on pressure, grow after patience. Same logic here for decomposition aggressiveness. `max_fanout` caps sub-tasks per node. Without it, a staff agent handed an ambiguous product-scope task can emit ten sub-tasks, each of which also delegates, and cost grows factorially. The cap isn't about correctness — it's about asymmetry: being too aggressive costs the whole run, being too conservative costs coverage. Default is conservative.
+**Shrink-fast-grow-slow thinking applies to tree shape, not just numeric sizing.** Ballast uses it for batch sizing: cut on pressure, grow after patience. Same logic here for decomposition aggressiveness. `max_fanout` caps sub-tasks per node. Without it, a staff agent handed an ambiguous product-scope task can emit ten sub-tasks, each of which also delegates, and cost grows factorially. The cap isn't about correctness — it's about asymmetry: being too aggressive costs the whole run, being too conservative costs coverage. Default is conservative.
 
 **Why the LLM is in the review loop and not just the delivery loop.** The easy architecture: LLM decomposes, rules engine checks output against a schema. That works for format validation. It doesn't work for quality validation. Whether an engineer artifact contains "a rigorous evaluation with unit tests and explicit methodology" isn't a JSON schema check — it requires reading and judging. The rubric structures the judgment (criterion by criterion, evidence required), but the model provides it. This is where LLMs add value over deterministic checks; using them only as orchestrators wastes that.
 

@@ -1,4 +1,4 @@
-"""Tests for the static KB audit behind ``delegate-chain --check-kb``.
+"""Tests for the static KB audit behind ``echelon --check-kb``.
 
 Each test copies the shipped KB, breaks exactly one thing, and asserts that the audit names
 that defect -- and, through ``only``, that it names nothing else, so a check cannot pass by

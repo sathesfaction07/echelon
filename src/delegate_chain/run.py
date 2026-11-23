@@ -1,4 +1,4 @@
-"""CLI entrypoint for delegate-chain.
+"""CLI entrypoint for echelon.
 
 Examples
 --------
@@ -101,7 +101,7 @@ def print_tree(art: Artifact, depth: int = 0) -> None:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(
-        description="delegate-chain — Engineer multi-agent org (deliver + review)"
+        description="echelon — Engineer multi-agent org (deliver + review)"
     )
     ap.add_argument("--task", default=SAMPLE_TASK, help="task description to run")
     ap.add_argument(
@@ -173,7 +173,7 @@ def main(argv=None) -> int:
             "ERROR: Bedrock client unavailable. Check AWS creds / boto3 / region.", file=sys.stderr
         )
         print(
-            "Tip: use --print-prompts or --list-kb to explore delegate-chain without API access.",
+            "Tip: use --print-prompts or --list-kb to explore echelon without API access.",
             file=sys.stderr,
         )
         return 1

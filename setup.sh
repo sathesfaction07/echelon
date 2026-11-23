@@ -115,7 +115,7 @@ Setup complete.
 
   source .venv/bin/activate
 
-  delegate-chain --help                          # show CLI commands
+  echelon --help                          # show CLI commands
 
   # Run a delegation chain from the principal level down:
   #   from delegate_chain.schemas import Task

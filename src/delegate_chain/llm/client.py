@@ -1,4 +1,4 @@
-"""Bedrock/Claude client for delegate-chain.
+"""Bedrock/Claude client for echelon.
 
 Distilled from the proven pattern in ``validator/ai_validator.py`` (invoke +
 retries + JSON parsing + disk cache + cost estimation), repackaged as a small

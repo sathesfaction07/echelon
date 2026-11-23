@@ -26,7 +26,7 @@ jobs:
         run: ruff check src tests
 
       - name: Audit the knowledge base
-        run: delegate-chain --check-kb --strict
+        run: echelon --check-kb --strict
 
       - name: Test
         run: pytest -q --cov=delegate_chain --cov-report=term-missing
