@@ -1,0 +1,60 @@
+# =============================================================================
+# GLOSSARY — Shared Capability Model Definitions
+# =============================================================================
+# Original capability model authored for the delegate-chain hierarchical
+# multi-agent system. Defines the altitude axes that differentiate each tier.
+# NOT derived from any employer's leveling framework.
+#
+# This glossary provides consistent definitions loaded into every agent's
+# system prompt and used by the intake router, ensuring all tiers reason
+# about scope, complexity, and ambiguity with shared semantics.
+# =============================================================================
+
+scope_ladder:            # Work scope — who/what the work touches
+  component:  "A self-contained building block with a clearly defined interface; minimal external dependencies, deliverable independently. Solves part of a larger problem."
+  project:    "A time-bound effort with defined deliverables, typically creating a feature, capability, or improvement with measurable outcomes."
+  product:    "A complete solution offered to users: application, service, tool, or system delivering end-to-end value to a defined audience."
+  program:    "A coordinated set of related projects managed together to achieve strategic objectives spanning multiple products or capabilities."
+  portfolio:  "The broadest strategic scope: vision and direction across multiple programs, products, and initiatives to address an organization's overarching mission."
+
+complexity_ladder:       # Engineering complexity — visible/hidden risks and constraints
+  straightforward: "Clear path forward with minimal unknowns; the approach is well-understood, risks are identified and manageable."
+  difficult:       "Significant technical challenges requiring expertise and careful execution; visible risks requiring mitigation strategies."
+  complex:         "Multiple interacting constraints and trade-offs; visible risks compounded by technical debt or integration challenges."
+  significantly_complex: "Hidden risks that emerge during execution; inherent conflicts where solving one constraint creates others; requires anticipating second-order effects."
+
+ambiguity_ladder:        # Problem/solution definition clarity
+  engineer:      "Problem is well-scoped with clear requirements; solution approach is straightforward to determine; needs skilled execution."
+  senior:        "Problem requires framing or refinement; multiple solution approaches exist, requiring evaluation and selection; some exploration needed."
+  staff:         "Problem is loosely defined or symptoms-only; requires investigation to identify root cause and possible solutions; significant framing work."
+  principal:     "Problem space is novel or previously-unsolved; requires invention of new approaches or paradigms; no established best practices."
+  distinguished: "Emergent problem domain where even the problem framing is unclear; requires setting direction and defining what success means."
+
+autonomy_ladder:
+  supervised:       "Works with regular guidance and oversight; decisions reviewed by more senior team members before implementation."
+  semi_autonomous:  "Operates independently on well-defined work; seeks guidance for strategic decisions or novel situations."
+  independent:      "Self-directed on all technical decisions; provides direction to others; checks with leadership only on org-level alignment."
+  complete:         "Sets direction for others; operates with full autonomy on technical and strategic decisions within their scope."
+
+org_units:
+  self:        "Individual contributor (may mentor others informally)."
+  team:        "Small group working closely together (typically 3-10 people)."
+  multi_team:  "Multiple teams collaborating toward a shared goal."
+  organization: "Department or division-level scope (multiple teams under leadership hierarchy)."
+  cross_org:   "Multiple organizations or major divisions."
+
+engineering_bar:
+  baseline:
+    - "Write clean, maintainable code in industry-standard languages following best practices."
+    - "Implement designs using appropriate data structures, algorithms, and design patterns."
+    - "Write comprehensive tests (unit, integration) and verify functionality thoroughly."
+    - "Debug effectively using logs, metrics, profilers, and debugging tools."
+    - "Handle errors gracefully; understand failure modes and edge cases."
+    - "Document code and designs clearly so others can understand and maintain them."
+    - "Review others' code constructively; accept feedback on own code."
+  growth_rule: "Every tier above the baseline must demonstrate progressively deeper software engineering skill: system design, performance optimization, architectural decisions, engineering excellence standard-setting."
+
+cross_team_influence_for_progression:
+  engineer_to_senior: "No expectation of influencing beyond immediate team."
+  senior_to_staff:    "Demonstrates ability to work effectively across multiple teams."
+  staff_to_principal: "Track record of influencing and aligning work across an organization."

@@ -1,0 +1,152 @@
+# =============================================================================
+# SKILLS TAXONOMY — Competency Catalog for Engineering Tiers
+# =============================================================================
+# Original capability model authored for the delegate-chain hierarchical
+# multi-agent system. Defines concrete technical skills independent of tier level.
+# NOT derived from any employer's leveling framework.
+#
+# Each tier's KB assigns a proficiency level per skill domain from this vocabulary.
+# Proficiency grows with altitude: engineer focuses on execution, distinguished on
+# strategic vision. Sources: standard software engineering, ML/AI practice, and
+# systems design literature.
+# =============================================================================
+
+proficiency_ladder:
+  aware:       "Understands concepts and basic tools; applies to well-defined problems with guidance from senior team members."
+  proficient:  "Applies independently across varied contexts; makes sound tool/technique choices; can teach others the fundamentals."
+  deep:        "Expert-level mastery; makes nuanced trade-offs; teaches advanced concepts; recognized as a go-to resource."
+  inventor:    "Advances the field through novel methods or paradigms; shapes how others think about the domain; sought for strategic direction."
+  authority:   "Widely-recognized expert internally and externally; sets standards and direction; pioneering work that influences the industry."
+
+# =============================================================================
+# SKILL DOMAINS
+# =============================================================================
+
+domains:
+
+  - id: foundations
+    name: Computer Science & Mathematical Foundations
+    why: "Core theory underlying all applied technical work; essential for reasoning about correctness, performance, and trade-offs."
+    skills:
+      - id: algorithms_ds
+        name: Algorithms & Data Structures
+        subskills: [complexity analysis, sorting/searching/hashing, trees and graphs, dynamic programming, greedy algorithms, approximation techniques]
+      - id: mathematics
+        name: Applied Mathematics
+        subskills: [linear algebra, calculus, probability and statistics, discrete math, numerical methods, optimization theory]
+      - id: systems_theory
+        name: Systems Theory
+        subskills: [distributed systems concepts, consistency models, fault tolerance, concurrency, scalability patterns]
+
+  - id: software_engineering
+    name: Software Engineering & Craftsmanship
+    why: "The baseline engineering bar that every tier must meet and grow beyond; distinguishes production-quality work from prototypes."
+    skills:
+      - id: coding_craft
+        name: Coding Craft & Best Practices
+        subskills: [clean code principles, idioms for mainstream languages, code organization, readability, maintainability, technical debt management]
+      - id: testing_quality
+        name: Testing & Quality Assurance
+        subskills: [unit testing, integration testing, test-driven development, coverage analysis, mutation testing, property-based testing]
+      - id: system_design
+        name: System Design & Architecture
+        subskills: [decomposition and modularity, API design, scalability patterns, fault tolerance, observability, dependency management, architectural reviews]
+      - id: performance_optimization
+        name: Performance & Resource Optimization
+        subskills: [profiling and benchmarking, algorithmic optimization, memory management, caching strategies, cost analysis]
+      - id: security_practices
+        name: Security & Reliability
+        subskills: [threat modeling, input validation, authentication/authorization, secure coding practices, incident response, disaster recovery]
+      - id: devops_practices
+        name: DevOps & Continuous Delivery
+        subskills: [CI/CD pipelines, infrastructure as code, containerization, monitoring and alerting, deployment strategies, rollback procedures]
+
+  - id: machine_learning
+    name: Machine Learning & AI
+    why: "Core modeling and learning techniques applicable across problem domains."
+    skills:
+      - id: classical_ml
+        name: Classical Machine Learning
+        subskills: [supervised/unsupervised learning, regression and classification, ensemble methods, feature engineering, model selection and validation]
+      - id: deep_learning
+        name: Deep Learning
+        subskills: [neural network architectures, training dynamics, transfer learning, regularization techniques, optimization strategies]
+      - id: nlp_llm
+        name: Natural Language Processing & LLMs
+        subskills: [text processing, embeddings, transformers, fine-tuning, prompt engineering, retrieval-augmented generation, evaluation metrics]
+      - id: computer_vision
+        name: Computer Vision
+        subskills: [image classification, object detection, segmentation, feature extraction, convolutional networks, vision transformers]
+      - id: model_evaluation
+        name: Model Evaluation & Validation
+        subskills: [train/validation/test splits, cross-validation, metric selection, error analysis, bias detection, benchmarking]
+
+  - id: data_engineering
+    name: Data Engineering & Pipeline Development
+    why: "Data quality and pipeline reliability are prerequisites for any ML or analytics work at scale."
+    skills:
+      - id: data_pipelines
+        name: Data Pipeline Design
+        subskills: [ETL/ELT patterns, batch vs streaming, workflow orchestration, data validation, schema evolution]
+      - id: data_quality
+        name: Data Quality & Governance
+        subskills: [data profiling, anomaly detection, versioning, lineage tracking, privacy compliance, bias assessment]
+      - id: distributed_processing
+        name: Distributed Data Processing
+        subskills: [parallel processing frameworks, partitioning strategies, SQL at scale, storage formats, query optimization]
+
+  - id: ml_systems
+    name: ML Systems & Production ML
+    why: "Deploying models into production systems with reliability, performance, and maintainability."
+    skills:
+      - id: ml_lifecycle
+        name: ML Lifecycle Management
+        subskills: [experiment tracking, model versioning, reproducibility, configuration management, A/B testing integration]
+      - id: serving_inference
+        name: Model Serving & Inference
+        subskills: [latency optimization, batching, quantization, model compression, caching, scaling strategies]
+      - id: monitoring_ops
+        name: Production Monitoring & Ops
+        subskills: [performance monitoring, drift detection, alerting, incident response, rollback procedures, cost tracking]
+
+  - id: problem_solving
+    name: Problem Framing & Analytical Thinking
+    why: "How ambiguous situations get converted into tractable engineering problems; differentiates tiers by ambiguity-handling capability."
+    skills:
+      - id: problem_framing
+        name: Problem Framing & Scoping
+        subskills: [requirements gathering, root cause analysis, problem decomposition, scope definition, success criteria, risk identification]
+      - id: solution_design
+        name: Solution Design & Trade-offs
+        subskills: [option generation, trade-off analysis, feasibility assessment, constraint balancing, technology selection]
+      - id: research_methods
+        name: Research & Investigation
+        subskills: [literature review, prototyping, experimentation, hypothesis testing, evidence synthesis]
+
+  - id: collaboration
+    name: Collaboration & Communication
+    why: "Technical work happens in teams; influence and alignment are tier differentiators."
+    skills:
+      - id: technical_communication
+        name: Technical Communication
+        subskills: [documentation, design docs, code reviews, technical presentations, teaching and mentoring]
+      - id: stakeholder_management
+        name: Stakeholder Management
+        subskills: [requirement gathering, expectation setting, status communication, conflict resolution, building consensus]
+      - id: cross_team_influence
+        name: Cross-Team Collaboration
+        subskills: [dependency coordination, interface negotiation, knowledge sharing, unblocking others, community building]
+
+  - id: strategy_leadership
+    name: Strategy & Technical Leadership
+    why: "Higher tiers set direction, not just execute; strategic thinking and vision separate staff+ from engineer/senior."
+    skills:
+      - id: strategic_planning
+        name: Strategic Planning & Roadmapping
+        subskills: [vision setting, roadmap development, goal decomposition, long-term thinking, opportunity identification]
+      - id: technical_vision
+        name: Technical Vision & Direction
+        subskills: [technology trend analysis, paradigm shifts, architectural evolution, standards setting, thought leadership]
+      - id: mentoring_hiring
+        name: Mentoring, Hiring & Culture
+        subskills: [coaching and mentoring, interviewing and assessment, promotion evaluation, culture building, community leadership]
